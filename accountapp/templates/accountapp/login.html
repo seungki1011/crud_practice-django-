@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+
+    <div class='login_body'>
+        <div class='login_title'>
+            <h3>Login</h3>
+        </div>
+        <div>
+            <form action="" method="post">
+                {% csrf_token %}
+                <!-- {{form}} --> 
+                <!-- bootstrap 적용한 form 사용 --> 
+                {% bootstrap_form form %}
+
+                <input type="submit" class='btn btn-dark rounded-pill col-6 mt-4'>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+
+

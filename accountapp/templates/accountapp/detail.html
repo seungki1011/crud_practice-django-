@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div>
+        <div class='detail_body'>
+            {% comment %} <p>
+                {{ target_user.date_joined}}
+            </p>
+            {% endcomment %}
+            <!-- 닉네임 대신 아이디가 보이는 문제 -->
+            {% if target_user.profile %}
+            <!--미디어에 관련된 라우팅 필요 urls.py에서-->
+            <img src="{{target_user.profile.image.url}}" alt="" style="height: 9rem; width: 9rem; border-radius: 20rem; margin-bottom :2.5rem object-fit:cover">
+
+            <h2 style="margin-top:2.8rem">
+                <hr>
+                {{ target_user.profile.nickname }}
+                    {% if target_user == user %}
+                        <a class= "material-icons" href="{% url 'profileapp:update' pk=target_user.profile.pk %}" style = "margin-left: 0.5rem;">
+                            edit
+                        </a>
+                {% endif %}
+            </h2>
+            <!--상태 메세지-->
+            <h5 style="margin-top:1rem; margin-bottom:3rem;">
+                {{target_user.profile.message}}
+            </h5>
+            {% else %}
+                {% if target_user == user %}
+                    <a href="{% url 'profileapp:create' %}">
+                        <h2>
+                            Create Profile
+                        </h2>
+                    </a>
+                {% else %}
+                    <h2>
+                        프로필 미설정
+                    </h2>
+                {% endif %}
+            {% endif %}
+
+            <!-- 지금 접속한 유저와 target_user가 같다면-->
+            {% if target_user == user %}
+            <a href="{% url 'accountapp:update' pk=user.pk %}" class= "material-icons" style="margin-right:0.5rem;">
+                <p>
+                    settings
+                </p>
+            </a>
+            <a href="{% url 'accountapp:delete' pk=user.pk %}" class= "material-icons" style="margin-left:0.5rem; color:#a51b0b;">
+                <p>
+                    cancel
+                </p>
+            </a>
+            {% endif %}
+            <hr>
+        </div>
+
+        <div style="margin-top:4rem;">
+            {% include 'snippets/list_fragment.html' with article_list=object_list %}
+        </div>
+    </div>
+
+{% endblock %}

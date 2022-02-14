@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+
+    <div class='create_body'>
+        <div class='mb-4'>
+            <h3>Profile Create</h3>
+        </div>
+        {% comment %} enctype="multipart/form-data" 를 넣어줘야 미디어 파일 업로드가능 {% endcomment %}
+        <form action="{% url 'profileapp:create' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+
+            <input type="submit" class='btn btn-dark rounded-pill col-6 mt-4'>
+        </form>
+    </div>
+
+{% endblock %}

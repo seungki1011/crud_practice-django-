@@ -1,0 +1,17 @@
+#가상환경 추적 안함
+myvenv/
+
+#시크릿키 추적안함
+.env
+
+#데이터베이스 추적안함
+db.sqlite3
+
+.idea/
+
+#pycache 추적안함
+__pycache__/
+
+
+#media 추적안함
+media/

@@ -1,0 +1,27 @@
+
+{% load bootstrap4 %}
+
+{% block content %}
+
+    <div class='create_body'>
+        <div class='mb-4'>
+            <h3>Create Comment</h3>
+        </div>
+        <form action="{% url 'commentapp:create' %}" method="post">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+
+            {% if user.is_authenticated %}
+            <input type="submit" class='btn btn-dark rounded-pill col-6 mt-3'>
+            {% else %}
+            <a href="{% url 'accountapp:login' %}?next={{request.path}}" 
+            class='btn btn-dark rounded-pill col-6 mt-3'>
+                Login
+            </a>
+            {% endif %}
+            {% comment %} article.pk는 브라우저에서 조작이 가능함(조심){% endcomment %}
+            <input type="hidden" name="article_pk" value="{{article.pk}}">
+        </form>
+    </div>
+
+{% endblock %}

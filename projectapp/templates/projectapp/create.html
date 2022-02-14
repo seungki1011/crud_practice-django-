@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+
+    <div class='create_body'>
+        <div class='mb-4'>
+            <h3>Create Project</h3>
+        </div>
+        <form action="{% url 'projectapp:create' %}" method="post" enctype="multipart/form-data" class='project_create_form'>
+            {% csrf_token %}
+            {% bootstrap_form form %}
+
+            <input type="submit" class='btn btn-dark rounded-pill col-6 mt-4'>
+        </form>
+    </div>
+
+{% endblock %}

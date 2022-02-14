@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<!-- include구문으로 head를 따로 파일을 만들어서 사용 -->
+{% include 'head.html' %}
+
+<body class="base_body">
+    <!-- header와 footer는 계속 재사용 할 것 -->
+    {% include 'header.html' %}
+    <hr>
+    <!-- content block 생성, extend 구문 사용위해 -->
+    {% block content %}
+    {% endblock %}
+    <hr>
+    {% include 'footer.html' %}
+
+</body>
+
+</html>

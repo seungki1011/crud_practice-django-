@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+
+    <div class='update_body'>
+        <div class='mb-4'>
+            <h3>Change Info</h3>
+        </div>
+        <form action="{% url 'accountapp:update' pk=target_user.pk %}" method="post">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+
+            <input type="submit" class='btn btn-dark rounded-pill col-6 mt-4'>
+        </form>
+    </div>
+
+{% endblock %}

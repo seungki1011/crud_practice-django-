@@ -1,0 +1,21 @@
+
+<div class='comment_detail_body'>
+    <div>
+        <strong>
+            {{comment.writer.profile.nickname}}
+        </strong>
+        &nbsp&nbsp&nbsp
+        {{comment.created_at}}
+    </div>
+    <div class='comment_content'>
+        {{comment.content}}
+    </div>
+    
+    {% if comment.writer == user %}
+    <div class='comment_delete'>
+        <a href="{% url 'commentapp:delete' pk=comment.pk %}">
+            Delete
+        </a>
+    </div>
+    {% endif %}
+</div>

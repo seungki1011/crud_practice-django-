@@ -1,0 +1,19 @@
+{% load static %}
+
+{% if article_list %}
+<div class="container">
+    {% for article in article_list %}
+        <a href="{% url 'articleapp:detail' pk=article.pk %}">
+            {% include 'snippets/card.html' with article=article %}
+        </a>
+    {% endfor %}
+</div>
+<script src='{% static 'javascript/magicgrid.js' %}'></script>
+{% else %}
+<div class='text-center'>
+    <h1>No Articles</h1>
+</div>
+{% endif %}
+
+{% include 'snippets/pagination.html' with page_obj=page_obj %}
+

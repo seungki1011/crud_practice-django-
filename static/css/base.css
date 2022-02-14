@@ -1,0 +1,196 @@
+.base_body {
+    font-family: 'NanumSqaureR';
+}
+
+a {
+    text-decoration: none;
+    color : #3C3A39;
+}
+
+.nobo_footer_logo {
+    margin-top: 1rem; 
+    font-family: 'Nanum Gothic', sans-serif; 
+    font-size: 1rem;
+}
+
+.nobo_footer_menu {
+    font-size: 0.7rem;
+    text-decoration: none;
+}
+
+.nobo_footer {
+    text-align: center; 
+    margin-top: 2rem;
+}
+
+.hello_world_body {
+    text-align: center;
+    border-radius: 1rem; 
+    margin: 2rem;
+}
+
+.nobo_header {
+    text-align: center; 
+    margin: 2rem 0;
+}
+
+.nobo_header a {
+    margin-left : 0.5rem;
+    margin-right : 0.5rem;
+}
+
+.nobo_header_logo {
+    font-family: 'Nanum Gothic', sans-serif; 
+    margin-bottom: 2rem;
+}
+.nobo_header_menu~a {
+    text-decoration: none;
+}
+
+.hello_world_list {
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+.create_body {
+    text-align: center;
+    max-width: 500px;
+    margin: 4rem auto;
+}
+
+.login_body {
+    text-align: center;
+    max-width: 500px;
+    margin: 4rem auto;
+}
+
+.login_title {
+    margin-bottom: 2rem;
+}
+
+.detail_body {
+    text-align: center;
+    max-width: 400px;
+    margin: 3rem auto 1rem auto;
+    font-family: 'NanumSqaureB'
+}
+
+.article_content {
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}
+
+
+.update_body {
+    text-align: center;
+    max-width: 500px;
+    margin: 4rem auto;
+}
+
+.container {
+    padding: 0;
+    margin : 0 auto;
+}
+
+.container div {
+    width: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+}
+
+.container img {
+    width : 100%;
+    border-radius: 1rem;
+}
+
+.article_create_btn {
+    text-align: center;
+}
+
+.pagination {
+    margin : 3rem auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.detail_img {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.comment_detail_body {
+    border:1px solid;
+    text-align: left;
+    padding : 4%;
+    margin: 1rem 0;
+    border-radius: 1rem;
+    border-color: #bbb;
+}
+
+.comment_content {
+    margin: 1rem 0;
+}
+
+.comment_delete {
+    text-align: right;
+    font-size: 1.1rem;
+}
+
+.comment_delete a {
+    text-decoration: none;
+}
+
+.project_create_form div {
+    margin: 1rem;
+}
+
+.project_create_form #id_title.form-control {
+    border-radius: 1rem;
+}
+
+.project_create_form #id_description.form-control {
+    border-radius: 1rem;
+}
+
+.project_detail_img {
+    height: 13rem;
+    width: 13rem;
+    border-radius: 3rem;
+    margin-bottom: 1rem;
+    object-fit:cover;
+}
+
+.project_descrpition {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.project_container {
+    padding-top: 1rem;
+    padding-left: 11rem;
+    padding-right: 11rem;
+    margin : 0 auto;
+}
+
+.project_container div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+}
+
+.project_container img {
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 1rem;
+    width: 7rem;
+    height: 7rem;
+    object-fit: cover;
+}
+
+.project_card_title {
+    margin-top: 0.5rem;
+}

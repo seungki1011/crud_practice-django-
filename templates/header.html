@@ -1,0 +1,39 @@
+<div class="nobo_header">
+    <div>
+        <h1 class="nobo_header_logo"> <a href="{% url 'home' %}">NOBO</a></h1>
+    </div>
+    {% comment %} {% url 'projectapp:list' %} {% endcomment %}
+    <div class="nobo_header_menu"> 
+        <a href="{% url 'projectapp:list' %}" style="text-decoration: none">
+            <span>Projects</span>
+        </a> 
+        <a href="{% url 'articleapp:list' %}" style="text-decoration: none">
+            <span>Articles</span>
+        </a> 
+
+        {% comment %} user가 logout 상태면 login 보여주고, 반대면 logout 보여주기  {% endcomment %}
+        {% if not user.is_authenticated %}
+        {% comment %} get방식으로 next에 {{ request.path }} 넘겨줄거임, login후 login 페이지로 돌아옴 {% endcomment %}
+        {% comment %} next없이 직접 url치고 들어가면 profile로 redirect 문제 여전히 발생 {% endcomment %}
+        <a href="{% url 'accountapp:login' %}?next={{ request.path }}" style="text-decoration: none">
+            <span>Login</span>
+        </a> 
+        <a href="{% url 'accountapp:create' %}?next={{ request.path }}" style="text-decoration: none">
+            <span>SignUp</span>
+        </a> 
+        {% else %}
+
+        <a href="{% url 'subscribeapp:list' %}" style="text-decoration: none">
+            <span>Subscription</span>
+        </a> 
+        <a href="{% url 'accountapp:detail' pk=user.pk %}" style="text-decoration: none">
+            <span>MyPage</span>
+        </a> 
+        <a href="{% url 'accountapp:logout' %}?next={{ request.path }}" style="text-decoration: none">
+            <span>Logout</span>
+        </a> 
+        {% endif %}
+        
+    </div>
+
+</div>
